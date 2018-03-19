@@ -1,0 +1,27 @@
+.Topics {
+  padding: 80px;
+}
+.Topics ol {
+  padding: 10px;;
+}
+.Topics h2 {
+  color: black;
+  font-size: 1.5em;
+}
+.Topics a {
+  color: black
+}
+.Topics a:hover {
+  color: black
+}
+.categories {
+  outline: 1px solid red;
+  padding: 1px;
+}
+/* .heart:hover {
+  color: blue;
+} */
+/* .heart {
+  color: red;
+  font-size: 1em;
+} */

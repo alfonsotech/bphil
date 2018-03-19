@@ -1,0 +1,14 @@
+.Paths {
+  padding: 80px;
+}
+.paths-elements {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.request-path-button {
+  float: right;
+  margin: 40px 40px 0 0;
+}

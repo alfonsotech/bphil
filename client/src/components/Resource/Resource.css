@@ -1,0 +1,70 @@
+.Resource {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.resource-body>small>p>span {
+  color: rgba(0,0,0,.6);
+}
+.Resource h5 {
+  color: black;
+  margin: 0;
+}
+.Resource span {
+  padding: 0 3px;
+}
+.description {
+  color: black;
+  font-size: 18px;
+  clear:both;
+}
+.Resource .upvote-button button {
+  margin-right: 5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  color: black;
+}
+.Resource .upvote-button button:hover {
+  color: blue;
+  background-color: rgba(0,0,0, .1);
+}
+
+.Resource:hover {
+  outline: 1px dotted rgba(0, 0, 0, .1);
+}
+.resource-module {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.resource-notes {
+  padding: 5px;
+  overflow:scroll;
+}
+
+/*Make iFrame responsive*/
+.resource-content {
+  position: relative;
+  height: 0;
+  /* overflow: hidden; */
+}
+/* 16x9 Aspect Ratio */
+.resource-content-16x9 {
+  padding-bottom: 56.25%;
+}
+
+/* 4x3 Aspect Ratio */
+.resource-content-4x3 {
+  padding-bottom: 75%;
+}
+
+.resource-content iframe {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
