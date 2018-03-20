@@ -1,6 +1,7 @@
 var express = require('express')
 var bodyParser = require('body-parser')
 const path = require("path")
+require("dotenv").config()
 var mongoose = require('mongoose')
 var routes = require("./routes")
 var app = express()
@@ -19,7 +20,9 @@ app.use(routes)
 
 //Mongoose Connection
 mongoose.Promise = global.Promise
-mongoose.connect("mongodb://localhost/ppp")
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/ppp", function() {
+  console.log('MongoDB Connected!')
+  })
 // mongoose.connect("mongodb://127.0.0.1//mern-crud")
 mongoose.connection.on('connected', function () {
   console.log('Mongoose default connection open to mongodb://localhost/ppp');
