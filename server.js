@@ -1,5 +1,6 @@
 var express = require('express')
 var bodyParser = require('body-parser')
+const path = require("path")
 var mongoose = require('mongoose')
 var routes = require("./routes")
 var app = express()
@@ -11,7 +12,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-app.use(express.static("client/build"))
+app.use(express.static(path.join(__dirname, "client", "build")))
+
 app.use(routes)
 
 
