@@ -49,6 +49,7 @@
 .resource-content {
   position: relative;
   height: 0;
+  margin: 0;
   /* overflow: hidden; */
 }
 /* 16x9 Aspect Ratio */
@@ -67,4 +68,10 @@
   left: 0;
   width: 100%;
   height: 100%;
+}
+.under-link, .under-link:visited {
+  color: lightgray;
+}
+.under-link:hover {
+  color:darkgray;
 }

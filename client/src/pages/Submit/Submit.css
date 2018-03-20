@@ -4,3 +4,6 @@
 .Submit {
   padding: 20px;
 }
+.btn-light {
+  border: 1px solid rgba(0,0,0, .2)
+}

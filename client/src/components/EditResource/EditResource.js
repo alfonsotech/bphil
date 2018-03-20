@@ -13,18 +13,21 @@ class EditResource extends Component {
     this.state = {
       _id: '',
       title: '',
-      author:'',
+      author:[],
       url: '',
       duration:'',
       description: '',
       upvotes: 0,
+      views: 0,
       notes: '',
       media: '',
       mediaType: '',
       institution: '',
-      categories: '',
-      path: '',
+      categories: [],
+      level: '',
+      path: [],
       position: 0,
+      pathPosition: [],
       open:false
     }
   }
@@ -39,13 +42,16 @@ class EditResource extends Component {
           duration: resource.duration,
           description: resource.description,
           upvotes: resource.upvotes,
+          views: resource.views,
           notes: resource.notes,
           media: resource.media,
           mediaType: resource.mediaType,
           institution: resource.institution,
           categories: resource.categories,
+          level: resource.level,
           path: resource.path,
-          position: resource.position
+          position: resource.position,
+          pathPosition: resource.position
         })
   }
 
@@ -67,9 +73,9 @@ class EditResource extends Component {
   handleFormSubmit = event => {
     event.preventDefault()
 
-    const {title, author, url, duration, description, upvotes, notes, media, mediaType, institution, categories, path, position} = this.state
+    const {title, author, url, duration, description, upvotes, views, notes, media, mediaType, institution, categories,level, path, position, pathPosition} = this.state
 
-    axios.put('/api/resources/' + this.state._id,  {title, author, url, duration, description, upvotes, notes, media, mediaType, institution, categories, path, position})
+    axios.put('/api/resources/' + this.state._id,  {title, author, url, duration, description, upvotes, views, notes, media, mediaType, institution, categories, level, path, position, pathPosition})
     .then( data => {
             console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>edit form submitted, the following resource was added:', data)
           });
@@ -185,6 +191,7 @@ class EditResource extends Component {
                      onChange={this.handleInputChange}
                    />
 
+
                    <h4>
                      <strong>Upvotes</strong>
                    </h4>
@@ -197,6 +204,17 @@ class EditResource extends Component {
                      onChange={this.handleInputChange}
                    />
 
+                   <h4>
+                     <strong>Views</strong>
+                   </h4>
+                   <input
+                     className="form-control"
+                     type="text"
+                     value={this.state.views}
+                     name="views"
+                     placeholder="views"
+                     onChange={this.handleInputChange}
+                   />
 
                    <h4>
                      <strong>Notes</strong>
@@ -261,6 +279,18 @@ class EditResource extends Component {
                    />
 
                    <h4>
+                     <strong>Level</strong>
+                   </h4>
+                   <input
+                     className="form-control"
+                     type="text"
+                     value={this.state.level}
+                     name="level"
+                     placeholder="level"
+                     onChange={this.handleInputChange}
+                   />
+
+                   <h4>
                      <strong>Path</strong>
                    </h4>
                    <input
@@ -273,7 +303,7 @@ class EditResource extends Component {
                    />
 
                    <h4>
-                     <strong>Path Position</strong>
+                     <strong>Position</strong>
                    </h4>
                    <input
                      className="form-control"
@@ -281,6 +311,18 @@ class EditResource extends Component {
                      value={this.state.position}
                      name="position"
                      placeholder="position"
+                     onChange={this.handleInputChange}
+                   />
+
+                   <h4>
+                     <strong>pathPosition</strong>
+                   </h4>
+                   <input
+                     className="form-control"
+                     type="text"
+                     value={this.state.pathPosition}
+                     name="pathPosition"
+                     placeholder="pathPosition"
                      onChange={this.handleInputChange}
                    />
 

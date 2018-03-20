@@ -1,0 +1,38 @@
+/* .navbar {
+  border-radius: 0;
+  background-color: #fff;
+}
+.navbar {
+  background-color: rgba(255,255,255,.7);
+  margin: 0;
+  padding: 0 15px;
+  border-bottom: 1px solid rgba(0,0,0, .1);
+}
+
+.navbar-brand, .navbar-left li a, .nav-social-button {
+  color: rgba(0,0,0,.7);
+}
+.navbar-brand:hover, .navbar-left li a:hover, .nav-social-button:hover {
+  color: black;
+}
+.nav-social-button {
+  padding: 0;
+  margin: 0;
+} */
+
+.navbar-default {
+  margin-bottom: 0;
+  background-color: rgba(255,140,0, .8);
+  /* background-color:#F2FF00; */
+
+  /* color: #fff; */
+/* background: 0 0; */
+}
+.navbar-brand, .navbar-nav>li>a, .navbar-toggle .collapsed{
+  /* color: rgba(140,0,255, .8) !important; */
+  color: rgba(0,0,0, .9) !important;
+}
+.navbar-brand:hover, .navbar-nav>li>a:hover, .navbar-toggle .collapsed:h{
+  /* color: rgba(140,0,255, .8) !important; */
+  color: rgba(0,0,0, .5) !important;
+}

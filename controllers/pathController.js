@@ -3,11 +3,22 @@ const db = require("../models");
 // Defining methods for the pathController
 module.exports = {
   findAll: function(req, res) {
-    
+
     db.Path
       .find({})
+      .sort({pathPosition: 1})
       .exec( (err, docs) => {
-        console.log('docs', docs);
+        // console.log('docs', docs);
+        res.json(docs)
+      })
+  },
+  findNew: function(req, res){
+    db.Path
+      .find({})
+      .sort({date: -1})
+      .limit(6)
+      .exec( (err, docs) => {
+        // console.log('docs', docs);
         res.json(docs)
       })
   },
@@ -20,15 +31,12 @@ module.exports = {
   create: function(req, res) {
     console.log('req.body', req.body);
     const path = {
+      path: req.body.path,
       title: req.body.title,
       author:req.body.author,
       description: req.body.description,
-      upvotes: req.body.upvotes,
-      notes: req.body.notes,
       media: req.body.media,
-      categories: req.body.categories,
-      path: req.body.path,
-      position: req.body.position
+      categories: req.body.categories
     };
     console.log('path from controller: ', path);
     db.Path

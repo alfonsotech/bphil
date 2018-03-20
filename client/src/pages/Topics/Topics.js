@@ -1,8 +1,9 @@
 import React, { Component } from "react"
-import API from "../../utils/API"
+// import API from "../../utils/API"
 import axios from "axios"
+
 // import Spinner from '../../utils/Spinner'
-import Resource from '../../components/Resource'
+import Resources from '../../components/Resources'
 // import RaisedButton from 'material-ui/RaisedButton'
 import './Topics.css'
 
@@ -10,16 +11,18 @@ class Topics extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      // resources: [],
       trendingTopics: [],
       newTopics: [],
-      view: 'trendingTopics'
+      currentView: 'trendingTopics',
+      search:''
     }
   }
 
   componentDidMount = () => {
-    axios.all([API.getTrendingTopics(), API.getNewTopics()])
+    axios.all([this.getTrendingTopics(), this.getNewTopics()])
     .then(axios.spread( (trendingTopics, newTopics) => {
+      // console.log('trendingTopics: ', trendingTopics)
+      // console.log('newTopics: ', newTopics);
       this.setState({
         trendingTopics: trendingTopics.data,
         newTopics: newTopics.data
@@ -29,34 +32,60 @@ class Topics extends Component {
 
   }
 
-  changeView(view) {
-    console.log('change view clicked');
-    this.setState({view: view})
+  getTrendingTopics() {
+    return axios.get("/api/resources/trending")
+  }
+
+  getNewTopics() {
+    return axios.get("/api/resources/new")
+  }
+
+  changeView(currentView) {
+    this.setState({
+      currentView: currentView
+    })
+  }
+
+  updateSearch = (event) => {
+    this.setState({
+      search: event.target.value
+    })
   }
 
   render() {
 
-    // if( (!this.state.trendingTopics.length === 0) && (!this.state.newTopics.length === 0) ) {
-    //   return <Spinner />
-    // }
+
+
+    let filteredTopics = this.state[this.state.currentView].filter(
+      (resource) => {
+        return resource.description.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
+      }
+    )
 
     return (
       <div className="Topics">
-        <h1>Topics Page</h1>
-        <button onClick={() => this.changeView('newTopics')} label="Trending Topics" className='header-button'>Trending Topics</button>
-        <button onClick={() => this.changeView('newTopics')} label="Trending Topics" className='header-button'>Most Viewed</button>
-        <button onClick={() => this.changeView('trendingTopics')} label="New Topics" className='header-button'>New Topics</button>
 
-        {/* category filter */}
-        <ol>
-          {this.state[this.state.view].map( (resource, i) => {
-            return (
-              <li key={i}>
-              <Resource resource={resource} />
-                </li>
-            )
-          })}
-      </ol>
+        <div className="page-header">
+          <h1>Topics are...</h1>
+          <h3>... written, audio, or video content, crowd-sourced and upv♥ted by you. Go ahead, click on a topic to check it out. Upvote it if you'd recommend it to others. <a href="/submit">Then submit your favorite topics content here.</a></h3>
+
+          <div className="search-box">
+            <input type="text" placeholder="search topics"
+              value={this.state.search}
+              onChange={this.updateSearch}
+              ></input>
+            </div>
+        </div>
+
+
+        <button onClick={() => this.changeView('trendingTopics')}  className='header-button'>Trending Topics</button>
+
+        <button onClick={() => this.changeView('newTopics')} className='header-button'>New Topics</button>
+
+        <Resources
+          resources={filteredTopics} history={this.props.history}
+        />
+
     </div>
     )
   }

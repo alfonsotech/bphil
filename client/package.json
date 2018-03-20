@@ -1,15 +1,18 @@
 {
-  "name": "client",
+  "name": "public-philosophy-platform",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "axios": "^0.17.1",
+    "emotion": "^9.0.2",
     "material-ui": "^0.20.0",
-    "react": "^16.2.0",
+    "react": "^16.1.1",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.1.1",
     "react-fontawesome": "^1.6.1",
     "react-router-dom": "^4.2.2",
-    "react-dom": "^16.2.0",
-    "react-scripts": "1.1.1"
+    "react-scripts": "^1.0.17",
+    "react-spinners": "^0.2.6"
   },
   "scripts": {
     "start": "react-scripts start",

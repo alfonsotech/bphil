@@ -14,7 +14,7 @@ export default {
     return axios.get("/api/resources/trending");
   },
   getNewTopics: function() {
-    return axios.get("/api/resources/trending");
+    return axios.get("/api/resources/new");
   },
   // Deletes the saved article with the given id
   deleteResource: function(id) {

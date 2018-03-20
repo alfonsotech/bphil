@@ -43,6 +43,11 @@ const Nav = () => (
 
         </ul>
         <ul className="nav navbar-nav navbar-right">
+          {/* <li>
+            <a target="_blank"  rel="noopener noreferrer" href="#">
+              <img className="patreon-logo" src="/patreon-logo.png" alt="patreon-logo"></img>
+            </a>
+          </li> */}
           <li>
             <a target="_top"  rel="noopener noreferrer" href="mailto:thinkphilosophy@nym.hush.com?Subject=Inquiry%20About%20PPP">
               <FontAwesome
@@ -74,6 +79,8 @@ const Nav = () => (
               />
             </a>
           </li>
+
+
         </ul>
       </div>
 

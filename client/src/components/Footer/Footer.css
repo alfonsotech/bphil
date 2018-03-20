@@ -2,7 +2,7 @@ footer {
   box-sizing: border-box;
   height: 100%;
   background-color: #fff;
-  border-top: 1px solid #e0e0e0;
+  /* border-top: 1px solid #e0e0e0; */
   padding-top: 35px;
   text-align: center;
 }
@@ -35,7 +35,6 @@ footer {
   color: rgba(0,0,0,.7);
 }
 .footer-legal {
-  text-align: right;
   margin: 40px 20px 20px 0px;
 }
 .footer-legal>small>p, .footer-legal>a>small>p {
@@ -44,4 +43,13 @@ footer {
   text-decoration: none;
   list-style-type: none;
   color: black;
+}
+.patreon-logo {
+  height:30px;
+  width: 30px;
+  filter: grayscale(20%);
+}
+.photo-credit a, .photo-credit a:hover, .photo-credit a:visited {
+    color: darkgray;
+  text-decoration:none;
 }

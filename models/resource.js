@@ -5,16 +5,25 @@ const resourceSchema = new Schema({
   title: { type: String, required: true },
   author: { type: Array, required: true },
   url: { type: String, required: true },
-  duration: { type: String, required: false },
+  duration: { type: String, required: true },
   description: { type: String, required: false },
   upvotes: { type: Number, required: true },
-  notes: { type: String, required: false },
+  views: { type: Number, required: true },
+  notes: [{
+    note: { type: String, required: false },
+    upvote: { type: String, required: false }
+  }],
   media: { type: String, required: false },
-  mediaType: { type: String, required: false },
+  mediaType: { type: String, required: true },
   institution: { type: String, required: false },
-  categories: { type: Array, required: false, default: ['philosophy', 2]},
-  path: { type: String, required: false },
+  categories: { type: Array, required: false, default: ['philosophy']},
+  level:{ type: String, required: false },
+  path: { type: Array, required: false },
   position:{ type: Number, required: true },
+  pathPosition: [{
+    path: { type: String, required: false },
+    position: { type: Number, required: false }
+  }],
   date: { type: Date, default: Date.now }
 });
 

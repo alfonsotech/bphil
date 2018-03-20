@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 // import API from '../../utils/API'
+// import FlatButton from 'material-ui/FlatButton'
 import axios from 'axios'
 import './Submit.css'
 
@@ -9,18 +10,21 @@ class Submit extends Component {
     super()
     this.state = {
       title: '',
-      author:'',
+      author:[],
       url: '',
       duration:'',
       description: '',
       upvotes: 1,
+      views: 0,
       notes: '',
       media: '',
       mediaType: '',
       institution: '',
-      categories: '',
-      path: '',
-      position: 0
+      categories: [],
+      level: '',
+      path: [],
+      position: 0,
+      pathPosition: []
     }
   }
 
@@ -29,21 +33,44 @@ class Submit extends Component {
     this.setState({
       [name]: value
     })
+
     console.log('this.state inside handleInputChange', this.state);
   }
 
   handleFormSubmit = event => {
     event.preventDefault()
 
-    const {title, author, url, duration, description, upvotes, notes, media, mediaType, institution, categories, path, position} = this.state
+    const {title, author, url, duration, description, upvotes, views, notes, media, mediaType, institution, categories, level, path, position, pathPosition} = this.state
 
-    axios.post('/api/resources',  {title, author, url, duration, description, upvotes, notes, media, mediaType, institution, categories, path, position})
+    axios.post('/api/resources',  {title, author, url, duration, description, upvotes, views, notes, media, mediaType, institution, categories, level, path, position, pathPosition})
     .then( data => {
             console.log('form submitted, the following resource was added:', data)
+            this.setState({
+
+                title: '',
+                author:[],
+                url: '',
+                duration:'n/a',
+                description: '',
+                upvotes: 1,
+                views: 0,
+                notes: '',
+                media: '',
+                mediaType: '',
+                institution: '',
+                categories: [],
+                level: '',
+                path: [],
+                position: 0,
+                pathPosition: []
+
+            })
+            this.props.history.push('/topics')
           });
   }
 
   render() {
+    // console.log('this.props', this.props);
     return (
       <div className="Submit">
         <h1>Submit A Resource</h1>
@@ -52,20 +79,24 @@ class Submit extends Component {
 
           <div className="form-group">
 
-            <h4>
-              <strong>Path</strong>
+
+
+
+
+            {/* <h4>
+              <strong>pathPosition</strong>
             </h4>
             <input
               className="form-control"
               type="text"
-              value={this.state.path}
-              name="path"
-              placeholder="path"
+              value={this.state.pathPosition}
+              name="pathPosition"
+              placeholder="pathPosition"
               onChange={this.handleInputChange}
-            />
+            /> */}
 
             <h4>
-              <strong>Title*</strong>
+              <strong>Title</strong>
             </h4>
             <input
               className="form-control"
@@ -78,27 +109,27 @@ class Submit extends Component {
             />
 
             <h4>
-              <strong>Author*</strong>
+              <strong>Author</strong>
             </h4>
             <input
               className="form-control"
               type="text"
               value={this.state.author}
               name="author"
-              placeholder="Author"
+              placeholder="Author - who made it?"
               onChange={this.handleInputChange}
               required
             />
 
             <h4>
-              <strong>Source URL*</strong>
+              <strong>Source URL</strong>
             </h4>
             <input
               className="form-control"
               type="text"
               value={this.state.url}
               name="url"
-              placeholder="URL"
+              placeholder="URL - where is it found?"
               onChange={this.handleInputChange}
               required
             />
@@ -111,7 +142,7 @@ class Submit extends Component {
               type="text"
               value={this.state.description}
               name="description"
-                placeholder="description"
+                placeholder="Description - what does it cover or treat?"
               onChange={this.handleInputChange}
             />
 
@@ -123,11 +154,23 @@ class Submit extends Component {
               type="text"
               value={this.state.duration}
               name="duration"
-              placeholder="duration"
+              placeholder="Duration - how long does it take to listen to, watch, or read?"
               onChange={this.handleInputChange}
             />
 
             <h4>
+              <strong>Media Type</strong>
+            </h4>
+            <input
+              className="form-control"
+              type="text"
+              value={this.state.mediaType}
+              name="mediaType"
+              placeholder="Media Type - where does it appear? Eg., Youtube, Vimeo, BBC Radio, thePodcastName, iTunes, etc."
+              onChange={this.handleInputChange}
+            />
+
+            {/* <h4>
               <strong>Media</strong>
             </h4>
             <input
@@ -138,19 +181,6 @@ class Submit extends Component {
               placeholder="media link"
               onChange={this.handleInputChange}
 
-            />
-
-
-            <h4>
-              <strong>Media Type</strong>
-            </h4>
-            <input
-              className="form-control"
-              type="text"
-              value={this.state.mediaType}
-              name="mediaType"
-              placeholder="media type"
-              onChange={this.handleInputChange}
             />
 
             <h4>
@@ -176,18 +206,34 @@ class Submit extends Component {
               placeholder="categories"
               onChange={this.handleInputChange}
             />
+
+            <h4>
+              <strong>Level</strong>
+            </h4>
+            <input
+              className="form-control"
+              type="text"
+              value={this.state.level}
+              name="level"
+              placeholder="level"
+              onChange={this.handleInputChange}
+            /> */}
           </div>
 
-          <div className="pull-right">
+
+
+          <div className="text-center">
+            {/* <FlatButton type="text">Submit</FlatButton> */}
+
             <button
               type="submit"
-              className="btn btn-lg btn-danger">
+              className="btn btn-md btn-light">
               Submit
             </button>
           </div>
 
         </form>
-        <p><small><strong>*required</strong></small></p>
+
       </div>
     )
   }
