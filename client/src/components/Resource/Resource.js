@@ -65,7 +65,6 @@ class Resource extends Component {
       upvotes: upvoted
     })
     this.props.history.push('/topics')
-    // this.context.history.push('/topics')
   }
 
   handleUpViews = () => {
@@ -80,14 +79,18 @@ class Resource extends Component {
     this.handleUpViews()
     if(this.state.media) {
       window.open(this.state.media)
+    } else if(this.state.mediaType === "Blog") {
+      window.open(this.state.url)
     } else {
-      this.setState({open: true});
+      // this.setState({open: true});
+      window.open(this.state.url)
     }
   };
 
   handleClose = () => {
     this.setState({open: false});
   };
+
 
   render() {
 
@@ -124,6 +127,7 @@ class Resource extends Component {
            contentStyle={customContentStyle}
            onRequestClose={this.handleClose}
            autoScrollBodyContent={true}
+           className="dialog-box"
          >
            <div className="resource-content resource-content-16x9 resource-content-4x3">
              <iframe title={this.state.title} src={this.state.url} allow="autoplay; encrypted-media" allowFullScreen></iframe>
@@ -135,7 +139,9 @@ class Resource extends Component {
            </p>
            <hr />
 
-           <div className="resource-notes">
+           {/* <div className="resource-notes">
+             <h2>Notes</h2>
+             <div>{this.state.notes}</div>
              <form>
               <label>
                 Annotate:
@@ -143,11 +149,9 @@ class Resource extends Component {
               </label>
               <input type="submit" value="Submit" />
             </form>
-             <h2>Notes</h2>
-           <div>{this.state.notes}</div>
-           </div>
+           </div> */}
 
-           <FlatButton type="text">Report Broken Link</FlatButton>
+           <FlatButton type="text" className="broken-link-button"><a href="mailto:thinkphilosophy@nym.hush.com?Subject=Broken%20Link%20Report&body=Title%20of%20Topic%20with%20broken%20link:%20">Report Broken Link</a></FlatButton>
          </Dialog>
 
        </div>

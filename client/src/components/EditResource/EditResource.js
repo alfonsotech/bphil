@@ -79,13 +79,13 @@ class EditResource extends Component {
     .then( data => {
             console.log('form submitted, the following resource was added:', data)
           })
-            this.props.history.push('/')
+            this.props.history.push('/topics')
   }
 
   handleDelete = () => {
     console.log('Delete button clicked');
     axios.delete('/api/resources/' + this.state._id)
-    this.props.history.push('/')
+    this.props.history.push('/topics')
   }
 
   render() {
