@@ -54,8 +54,6 @@ class Topics extends Component {
 
   render() {
 
-
-
     let filteredTopics = this.state[this.state.currentView].filter(
       (resource) => {
         return resource.description.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1

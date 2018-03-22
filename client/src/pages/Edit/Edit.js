@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import API from "../../utils/API"
+// import API from "../../utils/API"
 import axios from "axios"
 // import Spinner from '../../utils/Spinner'
 import EditResource from '../../components/EditResource'
@@ -10,42 +10,48 @@ class Edit extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      // resources: [],
-      trendingTopics: [],
-      newTopics: [],
-      view: 'trendingTopics'
+      resources: [],
+      search: ''
     }
   }
 
   componentDidMount = () => {
-    axios.all([API.getTrendingTopics(), API.getNewTopics()])
-    .then(axios.spread( (trendingTopics, newTopics) => {
-      this.setState({
-        trendingTopics: trendingTopics.data,
-        newTopics: newTopics.data
-      })
-    }))
-    .catch(err => console.log(err))
+    axios.get('api/resources')
+    .then( results => {
+      const resources = results.data
+      this.setState({ resources})
+    })
 
   }
 
-  changeView(view) {
-    console.log('change view clicked');
-    this.setState({view: view})
+  updateSearch = (event) => {
+    this.setState({
+      search: event.target.value
+    })
   }
 
   render() {
 
+    let filteredTopics = this.state.resources.filter(
+      (resource) => {
+        return resource.description.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
+      }
+    )
+    console.log('filteredTopics', filteredTopics);
+
     return (
       <div className="Topics">
+        <div className="page-header">
+          <div className="search-box">
+            <input type="text" placeholder="search topics"
+              value={this.state.search}
+              onChange={this.updateSearch}
+              ></input>
+            </div>
+        </div>
 
-        <button onClick={() => this.changeView('newTopics')} label="Trending Topics" className='header-button'>Trending Topics</button>
-
-        <button onClick={() => this.changeView('trendingTopics')} label="New Topics" className='header-button'>New Topics</button>
-
-        {/* category filter */}
         <ol>
-          {this.state[this.state.view].map( (resource, i) => {
+          {filteredTopics.map( (resource, i) => {
             return (
               <li key={i}>
               <EditResource resource={resource} />
