@@ -79,8 +79,6 @@ class Resource extends Component {
     this.handleUpViews()
     if(this.state.media) {
       window.open(this.state.media)
-    } else if(this.state.mediaType === "Blog") {
-      window.open(this.state.url)
     } else {
       // this.setState({open: true});
       window.open(this.state.url)
