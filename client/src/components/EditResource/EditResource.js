@@ -77,13 +77,15 @@ class EditResource extends Component {
 
     axios.put('/api/resources/' + this.state._id,  {title, author, url, duration, description, upvotes, views, notes, media, mediaType, institution, categories, level, path, position, pathPosition})
     .then( data => {
-            console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>edit form submitted, the following resource was added:', data)
-          });
+            console.log('form submitted, the following resource was added:', data)
+          })
+            this.props.history.push('/')
   }
 
   handleDelete = () => {
     console.log('Delete button clicked');
     axios.delete('/api/resources/' + this.state._id)
+    this.props.history.push('/')
   }
 
   render() {

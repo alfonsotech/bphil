@@ -16,7 +16,7 @@ class Edit extends Component {
   }
 
   componentDidMount = () => {
-    axios.get('api/resources')
+    axios.get('api/resources/new')
     .then( results => {
       const resources = results.data
       this.setState({ resources})
@@ -34,27 +34,28 @@ class Edit extends Component {
 
     let filteredTopics = this.state.resources.filter(
       (resource) => {
-        return resource.description.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
+        return resource.title.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
       }
     )
-    console.log('filteredTopics', filteredTopics);
 
     return (
       <div className="Topics">
-        <div className="page-header">
+
           <div className="search-box">
             <input type="text" placeholder="search topics"
               value={this.state.search}
               onChange={this.updateSearch}
               ></input>
             </div>
-        </div>
+
 
         <ol>
           {filteredTopics.map( (resource, i) => {
             return (
               <li key={i}>
-              <EditResource resource={resource} />
+                <EditResource
+                  resource={resource}
+                  history={this.props.history} />
                 </li>
             )
           })}

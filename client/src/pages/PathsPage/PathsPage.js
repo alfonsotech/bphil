@@ -11,22 +11,10 @@ class PathsPage extends Component {
     this.state = {
       newPaths: [],
       allPaths: [],
-      currentView: 'newPaths',
+      currentView: 'allPaths',
       search: ''
     }
   }
-
-  // componentDidMount = () => {
-  //   axios.get('/api/paths')
-  //   .then( response => {
-  //     this.setState({
-  //       allPaths: response.data
-  //     })
-  //   })
-  //   .catch(function (error) {
-  //     console.log(error);
-  //   });
-  // }
 
   componentDidMount = () => {
     axios.all([this.getAllPaths(), this.getNewPaths()])
