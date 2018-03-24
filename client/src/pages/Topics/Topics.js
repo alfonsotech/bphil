@@ -56,7 +56,43 @@ class Topics extends Component {
 
     let filteredTopics = this.state[this.state.currentView].filter(
       (resource) => {
-        return resource.description.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
+
+        for(var i =0; i< resource.author.length; i++) {
+          var author = resource.author[i].toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
+        }
+
+        var title = resource.title.toLowerCase().indexOf(this.state.search.toLowerCase())!== -1
+
+        if(resource.description) {
+          var description = resource.description.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
+        }
+
+        if(resource.categories) {
+          for(var j =0; j< resource.categories.length; j++) {
+            //if category is a not a Number
+            if(typeof resource.categories[j] === 'string'){
+              var categories = resource.categories[j].toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
+
+            }
+          }
+        }
+
+        if(resource.path) {
+          for(var k =0; k< resource.path.length; k++) {
+            //if category is a not a Number
+            if(typeof resource.path[k] === 'string'){
+              var path = resource.path[k].toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
+
+            }
+          }
+        }
+
+        if(resource.level) {
+          var level = resource.level.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
+        }
+
+        return description || title || author || categories || path || level
+        
       }
     )
 
