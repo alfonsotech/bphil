@@ -73,7 +73,7 @@ class Submit extends Component {
     // console.log('this.props', this.props);
     return (
       <div className="Submit">
-        <h1>Submit A Resource</h1>
+        <h1>Submit Topics Content</h1>
 
         <form onSubmit={this.handleFormSubmit}>
 
@@ -166,7 +166,7 @@ class Submit extends Component {
               type="text"
               value={this.state.mediaType}
               name="mediaType"
-              placeholder="Media Type - where does it appear? Eg., Youtube, Vimeo, BBC Radio, thePodcastName, iTunes, etc."
+              placeholder="Media Type - is this Video, Audio, or Written content?"
               onChange={this.handleInputChange}
             />
 

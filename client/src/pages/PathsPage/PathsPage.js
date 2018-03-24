@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import axios from "axios"
 import Paths from '../../components/Paths'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+// import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 // import RaisedButton from 'material-ui/RaisedButton'
 import './PathsPage.css'
 
@@ -47,24 +47,38 @@ class PathsPage extends Component {
   }
 
   render() {
-
     let filteredTopics = this.state[this.state.currentView].filter(
       (path) => {
-        return path.title.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
+        if(path.description) {
+          var description = path.description.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
+        }
+        if(path.author) {
+          for(var i =0; i< path.author.length; i++) {
+            var author = path.author[i].toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
+          }
+        }
+
+        if(path.categories) {
+          for(var j =0; j< path.categories.length; j++) {
+            //if category is a not a Number
+            if(typeof path.categories[j] === 'string'){
+              var categories = path.categories[j].toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
+
+            }
+          }
+        }
+
+        var title = path.title.toLowerCase().indexOf(this.state.search.toLowerCase())!== -1
+
+        return title  || description || author || categories
       }
     )
-
     return (
-      <MuiThemeProvider>
+
         <div>
           <div className="Paths">
             <div className="page-header">
-              {/* <RaisedButton
-              className='request-path-button'
-              type="text"
-              // onClick={this.handleOpen}
-              label="Request Path"
-              /> */}
+
             <h1>Paths are...</h1>
             <h3>... curated by passionate experts. They offer the opportunity to study philosophy in a more structured way. Go ahead, click on a path now to start your journey.</h3>
 
@@ -83,7 +97,7 @@ class PathsPage extends Component {
         <Paths paths={filteredTopics} />
     </div>
     </div>
-  </MuiThemeProvider>
+
     )
   }
 }
