@@ -140,7 +140,6 @@ class Resource extends Component {
           >
           <CardText
             actAsExpander={true}
-            showExpandableButton={true}
             >
             <div className="list-item">
               <li>
