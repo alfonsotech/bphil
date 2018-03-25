@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import Dialog from 'material-ui/Dialog'
+import FontAwesome from 'react-fontawesome'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import FlatButton from 'material-ui/FlatButton'
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
+import Toggle from 'material-ui/Toggle';
 import axios from "axios"
 import './Resource.css'
 
@@ -31,7 +34,8 @@ class Resource extends Component {
       path: [],
       position: 0,
       pathPosition: [],
-      open:false
+      open:false,
+      expanded: false
     }
   }
 
@@ -58,6 +62,8 @@ class Resource extends Component {
     })
   }
 
+
+
   handleUpvote = () => {
     const upvoted = this.state.upvotes + 1
     this.setState({upvotes:upvoted})
@@ -83,11 +89,27 @@ class Resource extends Component {
       // this.setState({open: true});
       window.open(this.state.url)
     }
-  };
+  }
 
-  handleClose = () => {
-    this.setState({open: false});
-  };
+  // handleClose = () => {
+  //   this.setState({open: false});
+  // }
+
+  handleExpandChange = (expanded) => {
+    this.setState({expanded: expanded})
+  }
+
+  handleToggle = (event, toggle) => {
+    this.setState({expanded: toggle})
+  }
+
+  handleExpand = () => {
+    this.setState({expanded: true})
+  }
+
+  handleReduce = () => {
+    this.setState({expanded: false})
+  }
 
 
   render() {
@@ -96,11 +118,66 @@ class Resource extends Component {
 
     return (
       <MuiThemeProvider>
-       <div className="Resource">
-         <div className="upvote-button">
-           <button type="submit" onClick={this.handleUpvote} className="heart"> ♥ </button>
-         </div>
-         <div className="resource-body">
+
+
+        <Card expanded={this.state.expanded} onExpandChange={this.handleExpandChange}
+        className="card-item"
+          >
+
+          <CardText  expandable={false}>
+            <div className="list-item">
+            <li>
+            <div className="Resource">
+            <div className="upvote-button">
+              <button type="submit" onClick={this.handleUpvote} className="heart"> ♥ </button>
+            </div>
+            <div className="resource-body">
+              <h5 onClick={this.handleOpen} className={this.state.category}>
+                <span>{this.state.title}</span>
+                <span>  | </span>
+                <span>{this.state.author}</span>
+                <span><small>  ({this.state.mediaType} </small></span>
+              </h5>
+              <small>
+                <p>
+                  <span>upv♥tes: {this.state.upvotes}</span>
+                  <span> | </span>
+                  <span>views: {this.state.views}</span>
+                  <span> | </span>
+                  <span>duration: {this.state.duration}</span>
+                </p>
+              </small>
+            </div>
+            </div>
+            </li>
+          </div>
+            <Toggle
+              thumbSwitchedStyle={{ backgroundColor: 'white' }}
+              trackSwitchedStyle={{ backgroundColor: 'lightgray' }}
+
+              toggled={this.state.expanded}
+              onToggle={this.handleToggle}            
+          />
+          </CardText>
+
+          <CardMedia />
+          <CardText expandable={true}>
+            <p>Description:</p>
+            {this.state.description}
+          </CardText>
+
+          {/* <CardActions>
+            <FlatButton label="Expand" onClick={this.handleExpand} />
+            <FlatButton label="Reduce" onClick={this.handleReduce} />
+          </CardActions> */}
+        </Card>
+
+
+
+
+
+
+         {/* <div className="resource-body">
            <h5 onClick={this.handleOpen} className={this.state.category}>
              <span>{this.state.title}</span>
              <span>  | </span>
@@ -116,9 +193,9 @@ class Resource extends Component {
                <span>duration: {this.state.duration}</span>
              </p>
            </small>
-         </div>
+         </div> */}
 
-         <Dialog
+         {/* <Dialog
            title={this.state.title}
            modal={false}
            open={this.state.open}
@@ -135,7 +212,7 @@ class Resource extends Component {
            <p className="description">
              {this.state.description}
            </p>
-           <hr />
+           <hr /> */}
 
            {/* <div className="resource-notes">
              <h2>Notes</h2>
@@ -148,11 +225,11 @@ class Resource extends Component {
               <input type="submit" value="Submit" />
             </form>
            </div> */}
-
+{/*
            <FlatButton type="text" className="broken-link-button"><a href="mailto:thinkphilosophy@nym.hush.com?Subject=Broken%20Link%20Report&body=Title%20of%20Topic%20with%20broken%20link:%20">Report Broken Link</a></FlatButton>
-         </Dialog>
+         </Dialog> */}
 
-       </div>
+
       </MuiThemeProvider>
     )
   }

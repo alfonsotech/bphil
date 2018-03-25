@@ -3,9 +3,9 @@
 }
 
 .Topics ol {
-  padding: 40px;
-  border: 1px solid rgba(0,0,0,.2);
-  border-top-right-radius: 20px;
+  padding-left: 0;
+  /* border: 1px solid rgba(0,0,0,.2);
+  border-top-right-radius: 20px; */
 }
 .Topics h2 {
   color: black;
@@ -30,7 +30,7 @@
   padding: 10px;
 }
 /* .heart:hover {
-  color: blue;
+  color: rgba(255,140,0, .8);
 } */
 /* .heart {
   color: red;

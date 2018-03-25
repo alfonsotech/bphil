@@ -56,7 +56,7 @@ class Topics extends Component {
 
     let filteredTopics = this.state[this.state.currentView].filter(
       (resource) => {
-
+console.log('resource.author', resource.author);
         for(var i =0; i< resource.author.length; i++) {
           var author = resource.author[i].toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
         }
@@ -92,7 +92,7 @@ class Topics extends Component {
         }
 
         return description || title || author || categories || path || level
-        
+
       }
     )
 

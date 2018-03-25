@@ -3,6 +3,8 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
+  margin: 0;
+  padding: 0;
 }
 .resource-body>small>p>span {
   color: rgba(0,0,0,.6);
@@ -27,13 +29,13 @@
   color: black;
 }
 .Resource .upvote-button button:hover {
-  color: blue;
-  background-color: rgba(0,0,0, .1);
+  color: rgba(255,140,0, 1);
+  /* background-color: rgba(0,0,0, .1); */
 }
 
-.Resource:hover {
+/* .Resource:hover {
   outline: 1px dotted rgba(0, 0, 0, .1);
-}
+} */
 /* .resource-module {
   display: flex;
   flex-direction: column;
@@ -82,4 +84,11 @@
 .broken-link-button a {
   color: darkgray !important;
   padding: 10px;
+}
+/* .list-item {
+  padding: 0 0 0 25px;
+} */
+.card-item {
+padding: 0 0 0 25px;
+color: rgba(0,0,0,.2)
 }

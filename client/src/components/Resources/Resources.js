@@ -7,12 +7,13 @@ const Resources = ({resources, history}) => {
         <ol>
           {resources.map( (resource, i) => {
             return (
-              <li key={resource._id}>
+
                 <Resource
+                  key={resource._id}
                   resource={resource}
                   history={history}
                 />
-              </li>
+            
             )
           }
         )}

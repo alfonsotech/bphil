@@ -17,7 +17,7 @@ margin: 0;
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  color: blue;
+  color: rgba(255,140,0, .8);
 }
 .Resource .heart:hover {
   color: black;

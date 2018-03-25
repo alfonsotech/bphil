@@ -51,9 +51,9 @@ class Path extends Component {
           <FlatButton label="Action2" />
         </CardActions> */}
         <CardText expandable={true}>
-          <ol>
+
           <PathResource path={this.state.path}/>
-        </ol>
+
         </CardText>
       </Card>
     </MuiThemeProvider>
@@ -87,9 +87,9 @@ class PathResource extends Component {
     return (
       this.state.resources.map( (resource, i) => {
         return (
-          <li key={i}>
+
           <Resource resource={resource} />
-            </li>
+            
         )
       })
     )
