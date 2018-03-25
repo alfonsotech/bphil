@@ -79,7 +79,7 @@ class EditResource extends Component {
     .then( data => {
             console.log('form submitted, the following resource was added:', data)
           })
-            this.props.history.push('/topics')
+            // this.props.history.push('/topics')
   }
 
   handleDelete = () => {

@@ -65,7 +65,7 @@ class Submit extends Component {
                 pathPosition: []
 
             })
-            // this.props.history.push('/topics')
+            this.props.history.push('/topics')
           });
   }
 
