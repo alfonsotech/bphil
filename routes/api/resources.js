@@ -22,10 +22,6 @@ router
   .route("/:id")
   .get(resourceController.findById)
   .put(resourceController.update)
-  .delete(resourceController.remove);
-router
-  .route("/note/:id")
-  .put(resourceController.updateNotes)
-  .delete(resourceController.remove);
+  .delete(resourceController.remove)
 
 module.exports = router;

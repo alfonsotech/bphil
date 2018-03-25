@@ -90,14 +90,6 @@ module.exports = {
       })
       .catch(err => res.status(422).json(err))
   },
-  updateNotes: function(req, res) {
-    db.Resource
-      .findOneAndUpdate({ _id: req.params.id }, {$push{this.notes:req.body}},{upsert:true})
-      .then(dbResource => {
-        res.json(dbResource)
-      })
-      .catch(err => res.status(422).json(err))
-  },
   remove: function(req, res) {
     db.Resource
       .findById({ _id: req.params.id })
