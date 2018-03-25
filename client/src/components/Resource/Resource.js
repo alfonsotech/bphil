@@ -111,6 +111,23 @@ class Resource extends Component {
     this.setState({expanded: false})
   }
 
+  // handleInputChange = event => {
+  //   const { name, value } = event.target
+  //   this.setState({
+  //     [name]: value
+  //   })
+  //   console.log('this.state.notes', this.state.notes);
+  // }
+
+  // handleNoteSubmit = event => {
+  //   event.preventDefault()
+  //   const notes = this.state.notes
+  //   console.log('this.state.notes', this.state.notes)
+  //   axios.put("/api/resources/note" + this.state._id, {notes: notes})
+  //   .then( data => {
+  //     console.log("New notes submitted: ", data);
+  //   })
+  // }
 
   render() {
 
@@ -126,8 +143,10 @@ class Resource extends Component {
 
           <CardText  expandable={false}>
             <div className="list-item">
+
             <li>
             <div className="Resource">
+
             <div className="upvote-button">
               <button type="submit" onClick={this.handleUpvote} className="heart"> ♥ </button>
             </div>
@@ -136,7 +155,7 @@ class Resource extends Component {
                 <span>{this.state.title}</span>
                 <span>  | </span>
                 <span>{this.state.author}</span>
-                <span><small>  ({this.state.mediaType} </small></span>
+                <span><small>  ({this.state.mediaType}) </small></span>
               </h5>
               <small>
                 <p>
@@ -145,18 +164,26 @@ class Resource extends Component {
                   <span>views: {this.state.views}</span>
                   <span> | </span>
                   <span>duration: {this.state.duration}</span>
+
                 </p>
               </small>
             </div>
-            </div>
-            </li>
-          </div>
-            <Toggle
+            {/* <Toggle
               thumbSwitchedStyle={{ backgroundColor: 'white' }}
               trackSwitchedStyle={{ backgroundColor: 'lightgray' }}
 
               toggled={this.state.expanded}
-              onToggle={this.handleToggle}            
+              onToggle={this.handleToggle}
+          /> */}
+            </div>
+            </li>
+          </div>
+          <Toggle
+            thumbSwitchedStyle={{ backgroundColor: 'white' }}
+            trackSwitchedStyle={{ backgroundColor: 'lightgray' }}
+
+            toggled={this.state.expanded}
+            onToggle={this.handleToggle}
           />
           </CardText>
 
@@ -164,6 +191,21 @@ class Resource extends Component {
           <CardText expandable={true}>
             <p>Description:</p>
             {this.state.description}
+
+            {/* <div className="resource-notes">
+              <hr />
+              <p>Notes:</p>
+              <div>{this.state.notes}</div>
+              <form onSubmit={this.handleNoteSubmit}>
+                <textarea
+                  value={this.state.value} onChange={this.handleInputChange}
+                  placeholder="What stayed with you?"
+                />
+               <input type="submit" value="Submit" />
+             </form>
+            </div> */}
+
+
           </CardText>
 
           {/* <CardActions>
@@ -171,29 +213,6 @@ class Resource extends Component {
             <FlatButton label="Reduce" onClick={this.handleReduce} />
           </CardActions> */}
         </Card>
-
-
-
-
-
-
-         {/* <div className="resource-body">
-           <h5 onClick={this.handleOpen} className={this.state.category}>
-             <span>{this.state.title}</span>
-             <span>  | </span>
-             <span>{this.state.author}</span>
-             <span><small>  ({this.state.mediaType}) </small></span>
-           </h5>
-           <small>
-             <p>
-               <span>upv♥tes: {this.state.upvotes}</span>
-               <span> | </span>
-               <span>views: {this.state.views}</span>
-               <span> | </span>
-               <span>duration: {this.state.duration}</span>
-             </p>
-           </small>
-         </div> */}
 
          {/* <Dialog
            title={this.state.title}
@@ -214,19 +233,9 @@ class Resource extends Component {
            </p>
            <hr /> */}
 
-           {/* <div className="resource-notes">
-             <h2>Notes</h2>
-             <div>{this.state.notes}</div>
-             <form>
-              <label>
-                Annotate:
-                <textarea value={this.state.value} onChange={this.handleChange} />
-              </label>
-              <input type="submit" value="Submit" />
-            </form>
-           </div> */}
-{/*
-           <FlatButton type="text" className="broken-link-button"><a href="mailto:thinkphilosophy@nym.hush.com?Subject=Broken%20Link%20Report&body=Title%20of%20Topic%20with%20broken%20link:%20">Report Broken Link</a></FlatButton>
+
+        {/*<FlatButton type="text" className="broken-link-button"><a href="mailto:thinkphilosophy@nym.hush.com?Subject=Broken%20Link%20Report&body=Title%20of%20Topic%20with%20broken%20link:%20">Report Broken Link</a></FlatButton>
+
          </Dialog> */}
 
 

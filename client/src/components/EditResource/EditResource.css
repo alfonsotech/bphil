@@ -24,9 +24,9 @@ margin: 0;
   background-color: rgba(0,0,0, .1);
 }
 
-.Resource:hover {
+/* .Resource:hover {
   outline: 1px dotted rgba(0, 0, 0, .1);
-}
+} */
 .action-button {
   margin: 5px;
 }
