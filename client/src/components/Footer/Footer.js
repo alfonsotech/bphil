@@ -34,7 +34,7 @@ const Footer = () => (
         <ul>
           <li><h6>SUPPORT</h6></li>
           <li>
-            <a target="_blank"  rel="noopener noreferrer" href="#">
+            <a target="_blank"  rel="noopener noreferrer" href="https://www.patreon.com/thinkPhilosophy">
               <img className="patreon-logo" src="/patreon-logo.png" alt="patreon-logo"></img>
             </a>
           </li>
@@ -71,7 +71,7 @@ const Footer = () => (
     </div>
     <div className="footer-legal">
       <small><p>Copyright &copy; 2018 AlfonsoTech - A thinkPhilosophy Production.</p></small>
-       <small><p className="photo-credit">Thanks to <a href="https://unsplash.com/photos/yQAtbM9Scwc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Adrian Pelletier</a> and <a href="https://unsplash.com/search/photos/john-mark" target="_blank">John Mark</a> on Unsplash for the photos above, respectively.</p></small>
+       <small><p className="photo-credit">Thanks to <a href="https://unsplash.com/photos/yQAtbM9Scwc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Adrian Pelletier</a> and <a href="https://unsplash.com/search/photos/john-mark" target="_blank">John Mark</a> on Unsplash for the homepage photos.</p></small>
     </div>
     </footer>
 );

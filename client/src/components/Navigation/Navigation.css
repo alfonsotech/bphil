@@ -32,7 +32,10 @@
   /* color: rgba(140,0,255, .8) !important; */
   color: rgba(0,0,0, .9) !important;
 }
-.navbar-brand:hover, .navbar-nav>li>a:hover, .navbar-toggle .collapsed:h{
+.navbar-brand:hover, .navbar-nav>li>a:hover, .navbar-toggle .collapsed:hover{
   /* color: rgba(140,0,255, .8) !important; */
   color: rgba(0,0,0, .5) !important;
+}
+.nav>li>a {
+ padding: 20px 10px;
 }
