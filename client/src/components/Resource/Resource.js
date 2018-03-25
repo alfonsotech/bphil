@@ -135,59 +135,40 @@ class Resource extends Component {
 
     return (
       <MuiThemeProvider>
-
-
         <Card expanded={this.state.expanded} onExpandChange={this.handleExpandChange}
         className="card-item"
           >
-
-          <CardText  expandable={false}>
+          <CardText
+            actAsExpander={true}
+            showExpandableButton={true}
+            >
             <div className="list-item">
-
-            <li>
-            <div className="Resource">
-
-            <div className="upvote-button">
-              <button type="submit" onClick={this.handleUpvote} className="heart"> ♥ </button>
+              <li>
+                <div className="Resource">
+                  <div className="upvote-button">
+                    <button type="submit" onClick={this.handleUpvote} className="heart"> ♥ </button>
+                  </div>
+                  <div className="resource-body">
+                    <h5 onClick={this.handleOpen} className={this.state.category}>
+                    <span>{this.state.title}</span>
+                    <span>  | </span>
+                    <span>{this.state.author}</span>
+                    <span><small>  ({this.state.mediaType}) </small></span>
+                    </h5>
+                    <small>
+                      <p>
+                      <span>upv♥tes: {this.state.upvotes}</span>
+                      <span> | </span>
+                      <span>views: {this.state.views}</span>
+                      <span> | </span>
+                      <span>duration: {this.state.duration}</span>
+                      </p>
+                    </small>
+                  </div>
+                </div>
+              </li>
             </div>
-            <div className="resource-body">
-              <h5 onClick={this.handleOpen} className={this.state.category}>
-                <span>{this.state.title}</span>
-                <span>  | </span>
-                <span>{this.state.author}</span>
-                <span><small>  ({this.state.mediaType}) </small></span>
-              </h5>
-              <small>
-                <p>
-                  <span>upv♥tes: {this.state.upvotes}</span>
-                  <span> | </span>
-                  <span>views: {this.state.views}</span>
-                  <span> | </span>
-                  <span>duration: {this.state.duration}</span>
-
-                </p>
-              </small>
-            </div>
-            {/* <Toggle
-              thumbSwitchedStyle={{ backgroundColor: 'white' }}
-              trackSwitchedStyle={{ backgroundColor: 'lightgray' }}
-
-              toggled={this.state.expanded}
-              onToggle={this.handleToggle}
-          /> */}
-            </div>
-            </li>
-          </div>
-          <Toggle
-            thumbSwitchedStyle={{ backgroundColor: 'white' }}
-            trackSwitchedStyle={{ backgroundColor: 'lightgray' }}
-
-            toggled={this.state.expanded}
-            onToggle={this.handleToggle}
-          />
           </CardText>
-
-          <CardMedia />
           <CardText expandable={true}>
             <p>Description:</p>
             {this.state.description}
@@ -204,8 +185,6 @@ class Resource extends Component {
                <input type="submit" value="Submit" />
              </form>
             </div> */}
-
-
           </CardText>
 
           {/* <CardActions>
@@ -214,31 +193,7 @@ class Resource extends Component {
           </CardActions> */}
         </Card>
 
-         {/* <Dialog
-           title={this.state.title}
-           modal={false}
-           open={this.state.open}
-           contentStyle={customContentStyle}
-           onRequestClose={this.handleClose}
-           autoScrollBodyContent={true}
-           className="dialog-box"
-         >
-           <div className="resource-content resource-content-16x9 resource-content-4x3">
-             <iframe title={this.state.title} src={this.state.url} allow="autoplay; encrypted-media" allowFullScreen></iframe>
-           </div>
-           <small><small><a className="under-link" href={this.state.url} target="_blank"><p className="pull-right">{this.state.url}</p></a></small></small>
-
-           <p className="description">
-             {this.state.description}
-           </p>
-           <hr /> */}
-
-
-        {/*<FlatButton type="text" className="broken-link-button"><a href="mailto:thinkphilosophy@nym.hush.com?Subject=Broken%20Link%20Report&body=Title%20of%20Topic%20with%20broken%20link:%20">Report Broken Link</a></FlatButton>
-
-         </Dialog> */}
-
-
+      {/*<FlatButton type="text" className="broken-link-button"><a href="mailto:thinkphilosophy@nym.hush.com?Subject=Broken%20Link%20Report&body=Title%20of%20Topic%20with%20broken%20link:%20">Report Broken Link</a></FlatButton>*/}
       </MuiThemeProvider>
     )
   }

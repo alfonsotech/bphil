@@ -89,7 +89,7 @@ class PathResource extends Component {
         return (
 
           <Resource resource={resource} />
-            
+
         )
       })
     )
