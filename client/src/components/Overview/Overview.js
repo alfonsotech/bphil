@@ -4,7 +4,7 @@ import './Overview.css';
 
 const paths = [{
   icon: '✽',
-  title: '100+ Philosophy Topics',
+  title: 'Crowsourced Philosophy Topics',
   message: 'Written, audio, or video content submitted and rated by you and organized into trending topic lists, so you can easily find the best and most popular philosophy content on the interwebs, crowsourced by you.',
   link:"/topics",
   linkText: "See trending Topics..."
