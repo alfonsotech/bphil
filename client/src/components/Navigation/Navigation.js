@@ -35,7 +35,7 @@ const Navigation = () => (
           <FontAwesome
             className='nav-social-button'
             name='envelope'
-            size='1.5x'
+            size='lg'
             style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
           />
         </NavItem>
@@ -46,7 +46,7 @@ const Navigation = () => (
         <FontAwesome
           className='nav-social-button'
           name='medium'
-          size='1x'
+          size='lg'
           style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
         />
         </NavItem>
@@ -58,7 +58,7 @@ const Navigation = () => (
         <FontAwesome
           className='nav-social-button'
           name='twitter'
-          size='1x'
+          size='lg'
           style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
         />
         </NavItem>
