@@ -40,6 +40,19 @@ background-color: rgba(0,0,0,.8); */
 }
 
 @media only screen and (max-width: 600px) {
+  .Paths {
+    padding: 0 20px;
+  }
+  .search-box {
+    font-size: 14px;
+    margin: 20px;
+  }
+  .search-box input {
+    width: 100%;
+  }
+  .form-control, input {
+    border-width: 1px;
+  }
   .page-header>h3 {
     padding-left: 10px;
     padding-right: 10px;
