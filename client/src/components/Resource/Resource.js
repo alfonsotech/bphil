@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
-import Dialog from 'material-ui/Dialog'
-import FontAwesome from 'react-fontawesome'
+// import Dialog from 'material-ui/Dialog'
+// import FontAwesome from 'react-fontawesome'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
-import Toggle from 'material-ui/Toggle';
+import {Card, CardText} from 'material-ui/Card';
+// import FlatButton from 'material-ui/FlatButton';
+// import Toggle from 'material-ui/Toggle';
 import axios from "axios"
 import './Resource.css'
 
-const customContentStyle = {
-  width: '90%',
-  maxWidth: 'none',
-};
+// const customContentStyle = {
+//   width: '90%',
+//   maxWidth: 'none',
+// }
 
 class Resource extends Component {
   constructor(props) {

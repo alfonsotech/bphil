@@ -59,7 +59,7 @@ const Nav = () => (
             </a>
           </li>
           <li>
-            <a target="_blank"  rel="noopener noreferrer" href="https://twitter.com/tPhilosophia">
+            <a target="_blank"  rel="noopener noreferrer" href="https://medium.com/@tPhilosophia">
               <FontAwesome
                 className='nav-social-button'
                 name='medium'

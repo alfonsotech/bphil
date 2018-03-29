@@ -39,7 +39,10 @@ const Navigation = () => (
             style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
           />
         </NavItem>
-        <NavItem eventKey={2} href="https:twitter.com/tPhilosophia">
+        <NavItem eventKey={2}
+          href="https://medium.com/@tPhilosophia"
+          target="_blank"
+          rel="noopener noreferrer">
         <FontAwesome
           className='nav-social-button'
           name='medium'
@@ -47,7 +50,11 @@ const Navigation = () => (
           style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
         />
         </NavItem>
-        <NavItem eventKey={2} href="https:twitter.com/tPhilosophia">
+        <NavItem eventKey={2}
+          href="https://twitter.com/tPhilosophia"
+          target="_blank"
+          rel="noopener noreferrer"
+          >
         <FontAwesome
           className='nav-social-button'
           name='twitter'

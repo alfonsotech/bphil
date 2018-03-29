@@ -51,7 +51,7 @@ const Footer = () => (
             style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
           />
         </a>
-        <a target="_blank"  rel="noopener noreferrer" href="https://twitter.com/tPhilosophia">
+        <a target="_blank"  rel="noopener noreferrer" href="https://medium.com/@tPhilosophia">
           <FontAwesome
             className='social-button'
             name='medium'
@@ -71,7 +71,7 @@ const Footer = () => (
     </div>
     <div className="footer-legal">
       <small><p>Copyright &copy; 2018 AlfonsoTech - A thinkPhilosophy Production.</p></small>
-       <small><p className="photo-credit">Thanks to <a href="https://unsplash.com/photos/yQAtbM9Scwc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Adrian Pelletier</a> and <a href="https://unsplash.com/search/photos/john-mark" target="_blank">John Mark</a> on Unsplash for the homepage photos.</p></small>
+       <small><p className="photo-credit">Thanks to <a href="https://unsplash.com/photos/yQAtbM9Scwc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Adrian Pelletier</a> and <a href="https://unsplash.com/search/photos/john-mark" target="_blank" rel="noopener noreferrer" >John Mark</a> on Unsplash for the homepage photos.</p></small>
     </div>
     </footer>
 );
