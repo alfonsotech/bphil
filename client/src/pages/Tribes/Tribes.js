@@ -18,7 +18,7 @@ class Tribes extends Component {
         <h1>Tribes are...</h1>
         {/* <h3>... made up of individuals that are going though the same learning path, so you'll always be in good company.</h3> */}
         {/* <br /> */}
-        <h1 className="text-center">﹏༺COMING SOON༻﹏</h1>
+        <h2 className="text-center">༺COMING SOON༻</h2>
 
         {/* <div className="search-box">
           <input type="text" placeholder="search paths"

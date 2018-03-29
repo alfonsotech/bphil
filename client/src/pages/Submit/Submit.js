@@ -73,7 +73,7 @@ class Submit extends Component {
     // console.log('this.props', this.props);
     return (
       <div className="Submit">
-        <h1>Submit Topics Content</h1>
+        <h1>Submit Topic</h1>
 
         <form onSubmit={this.handleFormSubmit}>
 

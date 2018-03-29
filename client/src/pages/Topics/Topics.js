@@ -100,7 +100,7 @@ class Topics extends Component {
 
         <div className="page-header">
           <h1>Topics are...</h1>
-          <h3>... written, audio, or video content, crowd-sourced and upv♥ted by you. Go ahead, click on a topic to check it out. Upvote it if you'd recommend it to others. <a href="/submit">Then submit your favorite topics content here.</a></h3>
+          <h3>... written, audio, or video content, crowd-sourced and upv♥ted by you. Go ahead, click on a topic to check it out. Upvote it if you'd recommend it to others. <a href="/submit">Then submit your favorite topics here.</a></h3>
 
           <div className="search-box">
             <input type="text" placeholder="search topics"

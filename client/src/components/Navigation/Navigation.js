@@ -8,7 +8,7 @@ const Navigation = () => (
   <Navbar collapseOnSelect>
     <Navbar.Header>
       <Navbar.Brand>
-        <a href="/">Public Philosophy Platform (beta)</a>
+        <a href="/">Public Philosophy Platform <small>(beta)</small></a>
       </Navbar.Brand>
       <Navbar.Toggle />
     </Navbar.Header>
