@@ -132,6 +132,33 @@ class Resource extends Component {
   render() {
 
     // console.log('this.props inside resource component', this.props.history);
+    var mediaType;
+    if(this.state.mediaType) {
+       mediaType = <span><small>  ( {this.state.mediaType}) </small></span>
+    } else {
+      mediaType = null
+    }
+
+    var duration;
+    if(this.state.duration) {
+       duration = <span> | duration: {this.state.duration}</span>
+    } else {
+      duration = null
+    }
+
+    var author;
+    if(this.state.author.length >= 1) {
+       author = <span>| {this.state.author}</span>
+    } else {
+      author = null
+    }
+
+    var description;
+    if(this.state.description) {
+       description = <span>Description: {this.state.description}</span>
+    } else {
+      description = 'No description provided'
+    }
 
     return (
       <MuiThemeProvider>
@@ -149,18 +176,16 @@ class Resource extends Component {
                   </div>
                   <div className="resource-body">
                     <h5 onClick={this.handleOpen} className={this.state.category}>
-                    <span>{this.state.title}</span>
-                    <span>  | </span>
-                    <span>{this.state.author}</span>
-                    <span><small>  ({this.state.mediaType}) </small></span>
+                      <span>{this.state.title}</span>
+                      {author}
+                      {mediaType}
                     </h5>
                     <small>
                       <p>
                       <span>upv♥tes: {this.state.upvotes}</span>
                       <span> | </span>
                       <span>views: {this.state.views}</span>
-                      <span> | </span>
-                      <span>duration: {this.state.duration}</span>
+                      {duration}
                       </p>
                     </small>
                   </div>
@@ -169,8 +194,7 @@ class Resource extends Component {
             </div>
           </CardText>
           <CardText expandable={true}>
-            <p>Description:</p>
-            {this.state.description}
+            {description}
 
             {/* <div className="resource-notes">
               <hr />

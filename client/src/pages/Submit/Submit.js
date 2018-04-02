@@ -103,12 +103,12 @@ class Submit extends Component {
               type="text"
               value={this.state.title}
               name="title"
-              placeholder="Title"
+              placeholder='Title, e.g., "Frankfurt School"'
               onChange={this.handleInputChange}
               required
             />
 
-            <h4>
+            {/* <h4>
               <strong>Author</strong>
             </h4>
             <input
@@ -119,7 +119,7 @@ class Submit extends Component {
               placeholder="Author - who made it?"
               onChange={this.handleInputChange}
               required
-            />
+            /> */}
 
             <h4>
               <strong>Source URL</strong>
@@ -129,12 +129,12 @@ class Submit extends Component {
               type="text"
               value={this.state.url}
               name="url"
-              placeholder="URL - where is it found?"
+              placeholder='URL - where is it found?, e.g., "https://www.youtube.com/egh546jhd89"'
               onChange={this.handleInputChange}
               required
             />
 
-            <h4>
+            {/* <h4>
               <strong>Description</strong>
             </h4>
             <input
@@ -144,9 +144,9 @@ class Submit extends Component {
               name="description"
                 placeholder="Description - what does it cover or treat?"
               onChange={this.handleInputChange}
-            />
+            /> */}
 
-            <h4>
+            {/* <h4>
               <strong>Duration</strong>
             </h4>
             <input
@@ -156,9 +156,9 @@ class Submit extends Component {
               name="duration"
               placeholder="Duration - how long does it take to listen to, watch, or read?"
               onChange={this.handleInputChange}
-            />
+            /> */}
 
-            <h4>
+            {/* <h4>
               <strong>Media Type</strong>
             </h4>
             <input
@@ -168,7 +168,7 @@ class Submit extends Component {
               name="mediaType"
               placeholder="Media Type - is this Video, Audio, or Written content?"
               onChange={this.handleInputChange}
-            />
+            /> */}
 
             {/* <h4>
               <strong>Media</strong>
