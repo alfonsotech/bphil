@@ -1,6 +1,5 @@
 const db = require("../models");
 
-// Defining methods for the pathController
 module.exports = {
   findAll: function(req, res) {
 
@@ -8,7 +7,6 @@ module.exports = {
       .find({})
       .sort({pathPosition: 1})
       .exec( (err, docs) => {
-        // console.log('docs', docs);
         res.json(docs)
       })
   },
@@ -18,7 +16,6 @@ module.exports = {
       .sort({date: -1})
       .limit(6)
       .exec( (err, docs) => {
-        // console.log('docs', docs);
         res.json(docs)
       })
   },

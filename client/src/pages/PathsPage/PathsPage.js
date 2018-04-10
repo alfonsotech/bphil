@@ -1,8 +1,6 @@
 import React, { Component } from "react"
 import axios from "axios"
 import Paths from '../../components/Paths'
-// import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-// import RaisedButton from 'material-ui/RaisedButton'
 import './PathsPage.css'
 
 class PathsPage extends Component {

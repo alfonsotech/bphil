@@ -134,7 +134,7 @@ class Resource extends Component {
     // console.log('this.props inside resource component', this.props.history);
     var mediaType;
     if(this.state.mediaType) {
-       mediaType = <span><small>  ( {this.state.mediaType}) </small></span>
+       mediaType = <span><small>  ( {this.state.mediaType} ) </small></span>
     } else {
       mediaType = null
     }
@@ -147,7 +147,7 @@ class Resource extends Component {
     }
 
     var author;
-    if(this.state.author.length >= 1) {
+    if(this.state.author.length) {
        author = <span>| {this.state.author}</span>
     } else {
       author = null

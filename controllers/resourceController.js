@@ -1,6 +1,5 @@
 const db = require("../models")
 
-// Defining methods for the resourceController
 module.exports = {
   findAll: function(req, res) {
     db.Resource
@@ -16,7 +15,6 @@ module.exports = {
       .find({})
       .sort({upvotes: -1, views: -1, date: -1})
       .exec( (err, docs) => {
-        // console.log('docs', docs)
         res.json(docs)
       })
   },
@@ -25,7 +23,6 @@ module.exports = {
       .find({})
       .sort({views: -1, date: -1})
       .exec( (err, docs) => {
-        // console.log('docs', docs)
         res.json(docs)
       })
   },
@@ -34,7 +31,6 @@ module.exports = {
       .find({})
       .sort({date: -1, upvotes: -1, views: -1})
       .exec( (err, docs) => {
-        // console.log('docs', docs)
         res.json(docs)
       })
   },

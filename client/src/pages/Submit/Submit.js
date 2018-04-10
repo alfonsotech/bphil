@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 // import API from '../../utils/API'
-// import FlatButton from 'material-ui/FlatButton'
 import axios from 'axios'
 import './Submit.css'
-
 
 class Submit extends Component {
   constructor() {
@@ -70,12 +68,17 @@ class Submit extends Component {
           });
   }
 
-  handleExpand = () => {
-
+  handleExpand = (event) => {
+    event.preventDefault()
+    if(!this.state.expanded) {
       this.setState({
         expanded: true
       })
-
+    } else {
+      this.setState({
+        expanded: false
+      })
+    }
   }
 
   render() {
@@ -83,9 +86,7 @@ class Submit extends Component {
     if(!this.state.expanded) {
       return (
         <div className="Submit">
-
           <h1>Submit Topic</h1>
-
           <form onSubmit={this.handleFormSubmit}>
             <div className="form-group">
               <h4>
@@ -114,7 +115,6 @@ class Submit extends Component {
               />
             </div>
             <div className="text-center">
-              {/* <FlatButton type="text">Submit</FlatButton> */}
               <button
                 type="submit"
                 className="btn btn-md btn-light">
@@ -235,54 +235,60 @@ class Submit extends Component {
     placeholder="media link"
     onChange={this.handleInputChange}
 
-  />
+    />
 
-  <h4>
-  <strong>Institution</strong>
-</h4>
-<input
-  className="form-control"
-  type="text"
-  value={this.state.institution}
-  name="institution"
-  placeholder="institution"
-  onChange={this.handleInputChange}
-/>
+    <h4>
+    <strong>Institution</strong>
+    </h4>
+    <input
+      className="form-control"
+      type="text"
+      value={this.state.institution}
+      name="institution"
+      placeholder="institution"
+      onChange={this.handleInputChange}
+    />
 
-<h4>
-  <strong>Categories</strong>
-</h4>
-<input
-  className="form-control"
-  type="text"
-  value={this.state.categories}
-  name="categories"
-  placeholder="categories"
-  onChange={this.handleInputChange}
-/>
+    <h4>
+      <strong>Categories</strong>
+    </h4>
+    <input
+      className="form-control"
+      type="text"
+      value={this.state.categories}
+      name="categories"
+      placeholder="categories"
+      onChange={this.handleInputChange}
+    />
 
-<h4>
-  <strong>Level</strong>
-</h4>
-<input
-  className="form-control"
-  type="text"
-  value={this.state.level}
-  name="level"
-  placeholder="level"
-  onChange={this.handleInputChange}
-/>
-</div>
-<div className="text-center">
-  {/* <FlatButton type="text">Submit</FlatButton> */}
-  <button
-    type="submit"
-    className="btn btn-md btn-light">
-    Submit
-  </button>
-</div>
-</form>
-</div>
+    <h4>
+      <strong>Level</strong>
+    </h4>
+    <input
+      className="form-control"
+      type="text"
+      value={this.state.level}
+      name="level"
+      placeholder="level"
+      onChange={this.handleInputChange}
+    />
+  </div>
+  <div className="text-center">
+    <button
+      type="submit"
+      className="btn btn-md btn-light">
+      Submit
+    </button>
+  </div>
+  </form>
+  <form onSubmit={this.handleExpand}>
+    <button
+      type="submit"
+      className="btn btn-md btn-light">
+      Simple Submit
+    </button>
+  </form>
+  </div>
 )
     }
   }

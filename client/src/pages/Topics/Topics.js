@@ -1,10 +1,8 @@
 import React, { Component } from "react"
 // import API from "../../utils/API"
 import axios from "axios"
-
 // import Spinner from '../../utils/Spinner'
 import Resources from '../../components/Resources'
-// import RaisedButton from 'material-ui/RaisedButton'
 import './Topics.css'
 
 class Topics extends Component {
@@ -21,15 +19,12 @@ class Topics extends Component {
   componentDidMount = () => {
     axios.all([this.getTrendingTopics(), this.getNewTopics()])
     .then(axios.spread( (trendingTopics, newTopics) => {
-      // console.log('trendingTopics: ', trendingTopics)
-      // console.log('newTopics: ', newTopics);
       this.setState({
         trendingTopics: trendingTopics.data,
         newTopics: newTopics.data
       })
     }))
     .catch(err => console.log(err))
-
   }
 
   getTrendingTopics() {

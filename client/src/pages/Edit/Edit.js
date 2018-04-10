@@ -3,7 +3,6 @@ import React, { Component } from "react"
 import axios from "axios"
 // import Spinner from '../../utils/Spinner'
 import EditResource from '../../components/EditResource'
-// import RaisedButton from 'material-ui/RaisedButton'
 import './Edit.css'
 
 class Edit extends Component {
@@ -40,28 +39,26 @@ class Edit extends Component {
 
     return (
       <div className="Topics">
-
-          <div className="search-box">
-            <input type="text" placeholder="search topics"
-              value={this.state.search}
-              onChange={this.updateSearch}
-              ></input>
-            </div>
-
-
-        <ol>
-          {filteredTopics.map( (resource, i) => {
-            return (
-              <li key={i}>
-                <EditResource
-                  resource={resource}
-                  history={this.props.history} />
-                </li>
-            )
-          })}
-      </ol>
-    </div>
+        <div className="search-box">
+          <input type="text" placeholder="search topics"
+            value={this.state.search}
+            onChange={this.updateSearch}
+            ></input>
+          </div>
+          <ol>
+            {filteredTopics.map( (resource, i) => {
+              return (
+                <li key={i}>
+                  <EditResource
+                    resource={resource}
+                    history={this.props.history} />
+                  </li>
+              )
+            })}
+          </ol>
+      </div>
     )
   }
 }
+
 export default Edit
