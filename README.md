@@ -23,7 +23,7 @@ A platform for sharing and curating freely available, online philosophy content 
 
 ## Author
 
-[Rita Alfonso](https://github.com/alfonsotech)
+[Rita Alfonso](https://github.com/alfonsotech), former Philosophy professor turned full-stack web developer.
 
 
 ## Folder Structure
