@@ -1,42 +1,47 @@
 # bPhil: A Public Philosophy Platform
 
-A platform for sharing and curating philosophy content. A curriculum site for the independent study of Philosophy. A place to meet others who interested in Philosophical study and discussion.
+A platform for sharing and curating freely available, online philosophy content via "Topics." Via "Paths," a curriculum site for the independent study of Philosophy. Forcoming "Tribes" will allow people to meet each others similarly interested in philosophical study and discussion.
 
 
 ## Getting Started
 
-Fork the public-philosophy-platform repo.
-
-Clone your forked repo.
-
-Set your remote upstream to the original repo.
+1. Fork the public-philosophy-platform repo.
+2. Clone your forked repo.
+3. Set your remote upstream to the original repo.
+4. Run server.js file ```node server.js```
+5. Change directories into the ```client``` folder, build the public files, then run the React, client side server: ```cd client && yarn build && yarn start```
 
 
 ## Built With
 
+* [axios](https://www.npmjs.com/package/axios)
 * [create-react-app](https://github.com/facebookincubator/create-react-app)
-
+* [material-ui](https://www.npmjs.com/package/material-ui)
+* [mongoose](https://www.npmjs.com/package/mongoose)
+* [react-bootstrap](https://www.npmjs.com/package/react-bootstrap)
+* [react-fontawesome](https://www.npmjs.com/package/react-fontawesome)
 
 ## Author
 
 [Rita Alfonso](https://github.com/alfonsotech)
 
 
-## License
-
-
-<!-- ## Folder Structure
+## Folder Structure
 
 After creation, your project should look like this:
 
 ```
-public-philosophy-platform/
-  client/
+bphil/
+  client
+    public
     src
-    node_modules/
-    package.json
-  public/
-    index.html
+    package.json  
+  controllers
+  models
+  routes
+  README.md
+  package.json
+  server.js
 ```
 
 For the project to build, **these files must exist with exact filenames**:
@@ -74,50 +79,3 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
-
-### Acknowledgements
-
-
-
-# Create React Express App
-
-## About This Boilerplate
-
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
-
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
-
-## Starting the app locally
-
-Start by installing front and backend dependencies. While in this directory, run the following commands:
-
-```
-yarn install
-cd client
-yarn install
-cd ..
-``
-
-After both installations complete, run the following command in your terminal:
-
-```
-yarn start
-```
-
-That's it, your app should be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
-
-## Deployment (Heroku)
-
-After confirming that you have an up to date git repository and a Heroku app created, complete the following:
-
-1. Build the React app for production by running the following command:
-
-```
-yarn build
-```
-
-2. Add and commit all changes to git
-
-3. Push to Heroku
-
-If all previous steps were followed correctly, your application should be deployed to Heroku! -->
