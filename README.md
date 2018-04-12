@@ -1,6 +1,6 @@
 # bPhil: A Public Philosophy Platform
 
-A platform for sharing and curating freely available, online philosophy content via "Topics." Via "Paths," a curriculum site for the independent study of Philosophy. Forcoming "Tribes" will allow people to meet each others similarly interested in philosophical study and discussion.
+A platform for sharing and curating freely available, online philosophy content via "Topics." Via "Paths," a curriculum site for the independent study of Philosophy. Forthcoming "Tribes" will allow people to meet others similarly interested in philosophical study and discussion.
 
 
 ## Getting Started
