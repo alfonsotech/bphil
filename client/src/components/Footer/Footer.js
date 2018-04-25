@@ -14,9 +14,9 @@ const Footer = () => (
           <li>
             <Link to="/paths">Paths</Link>
           </li>
-          <li>
+          {/* <li>
             <Link to="/tribes">Tribes</Link>
-          </li>
+          </li> */}
           <li>
             <Link className="submit-button" to="/submit">Submit</Link>
           </li>

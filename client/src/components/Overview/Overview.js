@@ -14,13 +14,7 @@ const paths = [{
   message: 'Curated by passionate experts, learning Paths offer the opportunity to study philosophy in a more structured way. Whatever your level or interests, you are likely to find a learning path worth following here.',
   link:"/paths",
   linkText: "Explore curated Paths..."
-},{
-  icon: '❃',
-  title: 'Philosophers\' Tribes',
-  message: 'Tribes are made up of individuals that are going though the same learning path, so you\'ll always be in good company.',
-  link:"/tribes",
-  linkText: "Join your Tribe..."
-},
+}
 ]
 
 class Overview extends Component {
