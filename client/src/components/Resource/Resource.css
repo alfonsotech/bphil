@@ -22,12 +22,20 @@
 .Resource span {
   padding: 0 3px;
 }
+.Resource .heart {
+  width: 20px;
+  height: 20px;
+  color: rgba(255,140,0, .8);
+}
+.Resource .heart:hover {
+  color: rgba(255,140,0, 1);
+}
 .description {
   color: black;
   font-size: 18px;
   clear:both;
 }
-.Resource .upvote-button button {
+/* .Resource .upvote-button button {
   margin-right: 5px;
   width: 25px;
   height: 25px;
@@ -38,7 +46,7 @@
   color: rgb(255,140,0);
   background-color: #fff;
   border-color: rgb(255,140,0)
-}
+} */
 
 /* .Resource:hover {
   outline: 1px dotted rgba(0, 0, 0, .1);
@@ -100,13 +108,18 @@
   padding: 0 0 0 25px;
 } */
 .card-item {
-padding: 0 0 0 25px;
+padding: 0 0 5px 0;
 color: rgba(0,0,0,.2);
 
 }
 .card-item>div {
-  padding:3px 3px 3px 3px !important;
+  /* padding:3px 3px 3px 3px !important; */
 }
 .card-item>div>div {
-  border: 1px solid white;
+ padding: 3px 25px  !important;
+}
+
+.small-text {
+  margin: 0;
+  padding-left: 18px;
 }

@@ -12,21 +12,6 @@ margin: 0;
 .Resource p {
   color: blue;
 }
-.Resource .heart {
-  margin-right: 5px;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  color: rgba(255,140,0, .8);
-}
-.Resource .heart:hover {
-  color: black;
-  background-color: rgba(0,0,0, .1);
-}
-
-/* .Resource:hover {
-  outline: 1px dotted rgba(0, 0, 0, .1);
-} */
 .action-button {
   margin: 5px;
 }

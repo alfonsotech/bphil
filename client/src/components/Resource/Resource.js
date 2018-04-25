@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 // import Dialog from 'material-ui/Dialog'
-// import FontAwesome from 'react-fontawesome'
+import FontAwesome from 'react-fontawesome'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import {Card, CardText} from 'material-ui/Card';
+import {Card, CardHeader, CardText} from 'material-ui/Card';
 // import FlatButton from 'material-ui/FlatButton';
 // import Toggle from 'material-ui/Toggle';
+// import fontawesome from 'react-fontawesome'
 import axios from "axios"
 import './Resource.css'
 
@@ -130,30 +131,26 @@ class Resource extends Component {
   // }
 
   render() {
-
     // console.log('this.props inside resource component', this.props.history);
-    var mediaType;
-    if(this.state.mediaType) {
-       mediaType = <span><small>  ( {this.state.mediaType} ) </small></span>
+    let mediaType;
+    if(this.state.mediaType) {      
+      if(this.state.duration) {
+         mediaType = <span><small>  ( {this.state.mediaType}, {this.state.duration} ) </small></span>
+      } else {
+        mediaType = <span><small>  ( {this.state.mediaType} ) </small></span>
+      }
     } else {
       mediaType = null
     }
 
-    var duration;
-    if(this.state.duration) {
-       duration = <span> | duration: {this.state.duration}</span>
-    } else {
-      duration = null
-    }
-
-    var author;
+    let author;
     if(this.state.author.length) {
        author = <span>| {this.state.author}</span>
     } else {
       author = null
     }
 
-    var description;
+    let description;
     if(this.state.description) {
        description = <span>Description: {this.state.description}</span>
     } else {
@@ -165,32 +162,39 @@ class Resource extends Component {
         <Card expanded={this.state.expanded} onExpandChange={this.handleExpandChange}
         className="card-item"
           >
-          <CardText
-            actAsExpander={true}
-            >
+          <CardHeader
+              actAsExpander={true}
+              showExpandableButton={true}
+          />
+          <CardText>
             <div className="list-item">
-              <li>
+
                 <div className="Resource">
-                  <div className="upvote-button">
-                    <button type="submit" onClick={this.handleUpvote} className="heart"> ♥ </button>
-                  </div>
                   <div className="resource-body">
+                    <small>
+                      <p className="small-text">
+                      <span onClick={this.handleUpvote}>
+                        <FontAwesome
+                          className='heart'
+                          name='heart'
+                          style={{ padding: 5, margin:0}}
+                        /> {this.state.upvotes}</span>
+                      <span>
+                        <FontAwesome
+                        className='icon'
+                        name='eye'
+                        style={{ padding: 5, margin:0}}
+                      />{this.state.views}</span>
+                      </p>
+                    </small>
                     <h5 onClick={this.handleOpen} className={this.state.category}>
+                      <span>{this.props.index}.</span>
                       <span>{this.state.title}</span>
                       {author}
                       {mediaType}
                     </h5>
-                    <small>
-                      <p>
-                      <span>upv♥tes: {this.state.upvotes}</span>
-                      <span> | </span>
-                      <span>views: {this.state.views}</span>
-                      {duration}
-                      </p>
-                    </small>
                   </div>
                 </div>
-              </li>
             </div>
           </CardText>
           <CardText expandable={true}>

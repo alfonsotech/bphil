@@ -4,20 +4,19 @@ import Resource from '../Resource'
 const Resources = ({resources, history}) => {
   // console.log('history', history);
       return (
-        <ol>
+        <div>
           {resources.map( (resource, i) => {
             return (
-
                 <Resource
                   key={resource._id}
+                  index={i+1}
                   resource={resource}
                   history={history}
                 />
-            
             )
           }
         )}
-      </ol>
+      </div>
       )
 
 
