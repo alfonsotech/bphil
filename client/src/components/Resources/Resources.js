@@ -9,7 +9,7 @@ const Resources = ({resources, history}) => {
             return (
                 <Resource
                   key={resource._id}
-                  index={i+1}
+                  index={(i+1)+'.'}
                   resource={resource}
                   history={history}
                 />

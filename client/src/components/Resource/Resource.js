@@ -133,7 +133,7 @@ class Resource extends Component {
   render() {
     // console.log('this.props inside resource component', this.props.history);
     let mediaType;
-    if(this.state.mediaType) {      
+    if(this.state.mediaType) {
       if(this.state.duration) {
          mediaType = <span><small>  ( {this.state.mediaType}, {this.state.duration} ) </small></span>
       } else {
@@ -188,7 +188,7 @@ class Resource extends Component {
                       </p>
                     </small>
                     <h5 onClick={this.handleOpen} className={this.state.category}>
-                      <span>{this.props.index}.</span>
+                      <span>{this.props.index}</span>
                       <span>{this.state.title}</span>
                       {author}
                       {mediaType}
